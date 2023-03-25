@@ -1,114 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Backflip</title>
-    <style>
-      .container {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        margin: 100px auto 0;
-        perspective: 1000px;
-      }
-      .guy {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        animation: backflip 1s ease-in-out forwards;
-      }
-      .guy .head {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background-color: #333;
-        transform-origin: center bottom;
-      }
-      .guy .torso {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background-color: #666;
-        transform-origin: center top;
-      }
-      .guy .arms {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        transform-style: preserve-3d;
-      }
-      .guy .arms .left-arm,
-      .guy .arms .right-arm {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background-color: #999;
-        transform-origin: right center;
-      }
-      .guy .arms .right-arm {
-        left: 50%;
-        transform-origin: left center;
-      }
-      .guy .legs {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        transform-style: preserve-3d;
-      }
-      .guy .legs .left-leg,
-      .guy .legs .right-leg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background-color: #ccc;
-        transform-origin: center top;
-      }
-      .guy .legs .right-leg {
-        left: 50%;
-        transform-origin: center top;
-      }
-
-      @keyframes backflip {
-        0% {
-          transform: rotateX(0deg);
-        }
-        50% {
-          transform: rotateX(180deg);
-        }
-        100% {
-          transform: rotateX(360deg);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="guy">
-        <div class="head"></div>
-        <div class="torso"></div>
-        <div class="arms">
-          <div class="left-arm"></div>
-          <div class="right-arm"></div>
-        </div>
-        <div class="legs">
-          <div class="left-leg"></div>
-          <div class="right-leg"></div>
-        </div>
-      </div>
-    </div>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="game-title">Tic Tac Toe</h1>
+    <h2 id="current-player"></h2>
+    <div class="board" id="board"></div>
+    <button id="reset-button">Reset Game</button>
+    <script src="script.js"></script>
+</body>
 </html>
