@@ -22,6 +22,22 @@
       .cell:hover {
         background-color: #eee;
       }
+      .board-line {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: black;
+        transform: rotate(45deg);
+      }
+      .board-line.horizontal {
+        top: calc(100% / 3);
+      }
+      .board-line.vertical {
+        left: calc(100% / 3);
+      }
+      .cell.O {
+        color: green;
+      }
     </style>
   </head>
   <body>
@@ -35,6 +51,10 @@
       <div class="cell"></div>
       <div class="cell"></div>
       <div class="cell"></div>
+      <div class="board-line horizontal"></div>
+      <div class="board-line horizontal"></div>
+      <div class="board-line vertical"></div>
+      <div class="board-line vertical"></div>
     </div>
     <script>
       const cells = document.querySelectorAll('.cell');
@@ -45,6 +65,7 @@
         cell.addEventListener('click', () => {
           if (board[index] === '') {
             cell.textContent = currentPlayer;
+            cell.classList.add(currentPlayer);
             board[index] = currentPlayer;
             if (checkWin(currentPlayer)) {
               alert(`${currentPlayer} wins!`);
@@ -72,17 +93,3 @@
         );
       }
 
-      function checkTie() {
-        return board.every((cell) => cell !== '');
-      }
-
-      function reset() {
-        board = ['', '', '', '', '', '', '', '', ''];
-        currentPlayer = 'X';
-        cells.forEach((cell) => {
-          cell.textContent = '';
-        });
-      }
-    </script>
-  </body>
-</html>
