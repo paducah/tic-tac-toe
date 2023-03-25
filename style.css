@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 0.5em;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1px;
+    width: 300px;
+    height: 300px;
+    background-color: #444;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: #f8f8f8;
+}
+
+#reset-button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #555;
+}
